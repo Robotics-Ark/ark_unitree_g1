@@ -10,3 +10,4 @@ Ark Implemention for Unitree G1
   - (https) `git clone https://github.com/Robotics-Ark/ark_unitree_g1.git`
 3. Change directory: `cd ark_unitree_g1`
 4. Install `pip install -e .`
+5. Install unitree_sdk

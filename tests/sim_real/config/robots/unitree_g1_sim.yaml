@@ -1,0 +1,51 @@
+name: "unitree_g1_sim"
+config:
+  urdf_path: "urdf/urdf/g1_description.urdf"
+  class_dir: "../../../ark_unitree_g1/unitree_g1"
+  network_interface: "enp0s31f6"       # (Optional) Network interface to use
+  frequency: 240  # default is 240Hz
+  width: 0.31   # Width of the robot (m)
+  control: "joint_space"
+  joint_space_control:
+    Kp: 60.0               # Joint stiffness coefficient
+    Kd: 5.0                # Joint damping coefficient
+    joint_min: [
+      # Left leg (6 DOF)
+      -2.5307, -0.5236, -2.7576, -0.087267, -0.87267, -0.2618,
+      # Right leg (6 DOF)  
+      -2.5307, -2.9671, -2.7576, -0.087267, -0.87267, -0.2618,
+      # Waist (3 DOF)
+      -2.618, -0.52, -0.52,
+      # Left arm (7 DOF)
+      -3.0892, -1.5882, -2.618, -1.0472, -1.972222054, -1.614429558, -1.614429558,
+      # Right arm (7 DOF)
+      -3.0892, -2.2515, -2.618, -1.0472, -1.972222054, -1.614429558, -1.614429558
+    ]
+    joint_max: [
+      # Left leg (6 DOF)
+      2.8798, 2.9671, 2.7576, 2.8798, 0.5236, 0.2618,
+      # Right leg (6 DOF)
+      2.8798, 0.5236, 2.7576, 2.8798, 0.5236, 0.2618,
+      # Waist (3 DOF)
+      2.618, 0.52, 0.52,
+      # Left arm (7 DOF)
+      2.6704, 2.2515, 2.618, 2.0944, 1.972222054, 1.614429558, 1.614429558,
+      # Right arm (7 DOF)
+      2.6704, 1.5882, 2.618, 2.0944, 1.972222054, 1.614429558, 1.614429558
+    ]
+  odometry: False
+  show_odometry: False
+  camera: False
+  lidar: False
+  show_frequency: 30
+  contact_force_threshold: 20.0
+  base_position:
+    - 0
+    - 0
+    - 0
+  base_orientation: # x, y, z, w
+    - 0
+    - 0
+    - 0
+    - 1
+  use_fixed_base: false

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- G1 Joint Description URDF - Based on g1_description.urdf -->
+<!-- This file describes the joint limits, effort, and velocity for the Unitree G1 humanoid robot -->
+<robot name="g1_joint_description">
+  
+  <!-- Left Leg Joints -->
+  <joint name="left_hip_pitch_joint" type="revolute">
+    <limit lower="-2.5307" upper="2.8798" effort="88" velocity="32"/>
+  </joint>
+  
+  <joint name="left_hip_roll_joint" type="revolute">
+    <limit lower="-0.5236" upper="2.9671" effort="139" velocity="20"/>
+  </joint>
+  
+  <joint name="left_hip_yaw_joint" type="revolute">
+    <limit lower="-2.7576" upper="2.7576" effort="88" velocity="32"/>
+  </joint>
+  
+  <joint name="left_knee_joint" type="revolute">
+    <limit lower="-0.087267" upper="2.8798" effort="139" velocity="20"/>
+  </joint>
+  
+  <joint name="left_ankle_pitch_joint" type="revolute">
+    <limit lower="-0.87267" upper="0.5236" effort="50" velocity="37"/>
+  </joint>
+  
+  <joint name="left_ankle_roll_joint" type="revolute">
+    <limit lower="-0.2618" upper="0.2618" effort="50" velocity="37"/>
+  </joint>
+
+  <!-- Right Leg Joints -->
+  <joint name="right_hip_pitch_joint" type="revolute">
+    <limit lower="-2.5307" upper="2.8798" effort="88" velocity="32"/>
+  </joint>
+  
+  <joint name="right_hip_roll_joint" type="revolute">
+    <limit lower="-2.9671" upper="0.5236" effort="139" velocity="20"/>
+  </joint>
+  
+  <joint name="right_hip_yaw_joint" type="revolute">
+    <limit lower="-2.7576" upper="2.7576" effort="88" velocity="32"/>
+  </joint>
+  
+  <joint name="right_knee_joint" type="revolute">
+    <limit lower="-0.087267" upper="2.8798" effort="139" velocity="20"/>
+  </joint>
+  
+  <joint name="right_ankle_pitch_joint" type="revolute">
+    <limit lower="-0.87267" upper="0.5236" effort="50" velocity="37"/>
+  </joint>
+  
+  <joint name="right_ankle_roll_joint" type="revolute">
+    <limit lower="-0.2618" upper="0.2618" effort="50" velocity="37"/>
+  </joint>
+
+  <!-- Waist Joints -->
+  <joint name="waist_yaw_joint" type="revolute">
+    <limit lower="-2.618" upper="2.618" effort="88" velocity="32"/>
+  </joint>
+  
+  <joint name="waist_roll_joint" type="revolute">
+    <limit lower="-0.52" upper="0.52" effort="50" velocity="37"/>
+  </joint>
+  
+  <joint name="waist_pitch_joint" type="revolute">
+    <limit lower="-0.52" upper="0.52" effort="50" velocity="37"/>
+  </joint>
+
+  <!-- Left Arm Joints -->
+  <joint name="left_shoulder_pitch_joint" type="revolute">
+    <limit lower="-3.0892" upper="2.6704" effort="25" velocity="37"/>
+  </joint>
+  
+  <joint name="left_shoulder_roll_joint" type="revolute">
+    <limit lower="-1.5882" upper="2.2515" effort="25" velocity="37"/>
+  </joint>
+  
+  <joint name="left_shoulder_yaw_joint" type="revolute">
+    <limit lower="-2.618" upper="2.618" effort="25" velocity="37"/>
+  </joint>
+  
+  <joint name="left_elbow_joint" type="revolute">
+    <limit lower="-1.0472" upper="2.0944" effort="25" velocity="37"/>
+  </joint>
+  
+  <joint name="left_wrist_roll_joint" type="revolute">
+    <limit lower="-1.972222054" upper="1.972222054" effort="25" velocity="37"/>
+  </joint>
+  
+  <joint name="left_wrist_pitch_joint" type="revolute">
+    <limit lower="-1.614429558" upper="1.614429558" effort="5" velocity="22"/>
+  </joint>
+  
+  <joint name="left_wrist_yaw_joint" type="revolute">
+    <limit lower="-1.614429558" upper="1.614429558" effort="5" velocity="22"/>
+  </joint>
+
+  <!-- Right Arm Joints -->
+  <joint name="right_shoulder_pitch_joint" type="revolute">
+    <limit lower="-3.0892" upper="2.6704" effort="25" velocity="37"/>
+  </joint>
+  
+  <joint name="right_shoulder_roll_joint" type="revolute">
+    <limit lower="-2.2515" upper="1.5882" effort="25" velocity="37"/>
+  </joint>
+  
+  <joint name="right_shoulder_yaw_joint" type="revolute">
+    <limit lower="-2.618" upper="2.618" effort="25" velocity="37"/>
+  </joint>
+  
+  <joint name="right_elbow_joint" type="revolute">
+    <limit lower="-1.0472" upper="2.0944" effort="25" velocity="37"/>
+  </joint>
+  
+  <joint name="right_wrist_roll_joint" type="revolute">
+    <limit lower="-1.972222054" upper="1.972222054" effort="25" velocity="37"/>
+  </joint>
+  
+  <joint name="right_wrist_pitch_joint" type="revolute">
+    <limit lower="-1.614429558" upper="1.614429558" effort="5" velocity="22"/>
+  </joint>
+  
+  <joint name="right_wrist_yaw_joint" type="revolute">
+    <limit lower="-1.614429558" upper="1.614429558" effort="5" velocity="22"/>
+  </joint>
+
+  <!-- Left Hand Joints -->
+  <joint name="left_hand_thumb_0_joint" type="revolute">
+    <limit lower="-1.04719755" upper="1.04719755" effort="2.45" velocity="6.857"/>
+  </joint>
+  
+  <joint name="left_hand_thumb_1_joint" type="revolute">
+    <limit lower="-0.72431163" upper="1.04719755" effort="1.4" velocity="12"/>
+  </joint>
+  
+  <joint name="left_hand_thumb_2_joint" type="revolute">
+    <limit lower="0" upper="1.74532925" effort="1.4" velocity="12"/>
+  </joint>
+  
+  <joint name="left_hand_middle_0_joint" type="revolute">
+    <limit lower="-1.57079632" upper="0" effort="1.4" velocity="12"/>
+  </joint>
+  
+  <joint name="left_hand_middle_1_joint" type="revolute">
+    <limit lower="-1.74532925" upper="0" effort="1.4" velocity="12"/>
+  </joint>
+  
+  <joint name="left_hand_index_0_joint" type="revolute">
+    <limit lower="-1.57079632" upper="0" effort="1.4" velocity="12"/>
+  </joint>
+  
+  <joint name="left_hand_index_1_joint" type="revolute">
+    <limit lower="-1.74532925" upper="0" effort="1.4" velocity="12"/>
+  </joint>
+
+  <!-- Right Hand Joints -->
+  <joint name="right_hand_thumb_0_joint" type="revolute">
+    <limit lower="-1.04719755" upper="1.04719755" effort="2.45" velocity="6.857"/>
+  </joint>
+  
+  <joint name="right_hand_thumb_1_joint" type="revolute">
+    <limit lower="-1.04719755" upper="0.72431163" effort="1.4" velocity="12"/>
+  </joint>
+  
+  <joint name="right_hand_thumb_2_joint" type="revolute">
+    <limit lower="-1.74532925" upper="0" effort="1.4" velocity="12"/>
+  </joint>
+  
+  <joint name="right_hand_middle_0_joint" type="revolute">
+    <limit lower="0" upper="1.57079632" effort="1.4" velocity="12"/>
+  </joint>
+  
+  <joint name="right_hand_middle_1_joint" type="revolute">
+    <limit lower="0" upper="1.74532925" effort="1.4" velocity="12"/>
+  </joint>
+  
+  <joint name="right_hand_index_0_joint" type="revolute">
+    <limit lower="0" upper="1.57079632" effort="1.4" velocity="12"/>
+  </joint>
+  
+  <joint name="right_hand_index_1_joint" type="revolute">
+    <limit lower="0" upper="1.74532925" effort="1.4" velocity="12"/>
+  </joint>
+
+</robot>
