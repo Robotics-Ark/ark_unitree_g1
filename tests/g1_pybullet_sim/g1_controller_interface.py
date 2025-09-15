@@ -12,7 +12,7 @@ class G1ControllerNode(InstanceNode):
     def __init__(self):
         '''
         Initialize the G1.
-        This class is responsible for controlling the Husky robot's joints.
+        This class is responsible for controlling the G1 robot's joints.
         '''
         super().__init__("G1Controller")
 

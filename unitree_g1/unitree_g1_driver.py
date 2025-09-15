@@ -87,7 +87,7 @@ class UnitreeG1Driver(RobotDriver):
 
         # TODO; Add high level control
 
-        # Note: G1 doesn't have a dedicated video client like GO2
+        # Note: G1 doesn't have a dedicated video client like GO2 (?)
         # Camera functionality would need to be implemented differently
         # self.video_client = VideoClient()  # Not available for G1
         # self.video_client.SetTimeout(3.0)
