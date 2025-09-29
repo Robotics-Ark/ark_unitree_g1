@@ -111,4 +111,8 @@ Publish commands via Ark `joint_group_command_t` with the appropriate `name` and
 - For MuJoCo or PyBullet, verify the system dependencies (graphics, drivers) and the versions from `requirements.txt`.
 - Ensure your real G1 is in Debug Mode before starting.
 
+## Acknowledgments
+Large parts of this repository are adapted from `unitreerobotics/xr_teleoperate`:
+- https://github.com/unitreerobotics/xr_teleoperate
+
 
