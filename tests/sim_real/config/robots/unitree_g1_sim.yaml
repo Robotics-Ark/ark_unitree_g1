@@ -2,9 +2,8 @@ name: "unitree_g1_sim"
 config:
   urdf_path: "urdf/urdf/g1_description.urdf"
   class_dir: "../../../ark_unitree_g1/unitree_g1"
-  network_interface: "enp0s31f6"       # (Optional) Network interface to use
+  network_interface: ""       # (Optional) Network interface to use
   frequency: 240  # default is 240Hz
-  width: 0.31   # Width of the robot (m)
   control: "joint_space"
   joint_space_control:
     Kp: 60.0               # Joint stiffness coefficient
@@ -33,19 +32,74 @@ config:
       # Right arm (7 DOF)
       2.6704, 1.5882, 2.618, 2.0944, 1.972222054, 1.614429558, 1.614429558
     ]
-  odometry: False
   show_odometry: False
   camera: False
   lidar: False
-  show_frequency: 30
-  contact_force_threshold: 20.0
   base_position:
     - 0
     - 0
-    - 0
+    - 0.8
+  
+  initial_configuration:
+  # 52 zeros
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  
   base_orientation: # x, y, z, w
     - 0
     - 0
     - 0
     - 1
   use_fixed_base: false
+  merge_fixed_links: True

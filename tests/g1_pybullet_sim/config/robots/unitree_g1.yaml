@@ -1,8 +1,8 @@
-name: "unitree_g1"
+name: "unitree_g1_sim"
 config:
   urdf_path: "urdf/urdf/g1_description.urdf"
   class_dir: "../../../ark_unitree_g1/unitree_g1"
-  network_interface: "lo"       # (Optional) Network interface to use
+  network_interface: ""       # (Optional) Network interface to use
   frequency: 240  # default is 240Hz
   control: "joint_space"
   joint_space_control:
@@ -37,9 +37,8 @@ config:
   base_position:
     - 0
     - 0
-    - 0.8
+    - 0
   initial_configuration:
-  # 52 zeros
   - 0
   - 0
   - 0

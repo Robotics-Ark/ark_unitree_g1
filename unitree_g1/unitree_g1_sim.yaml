@@ -3,11 +3,11 @@ robots:
     config:
       urdf_path: "urdf/urdf/g1_description.urdf"
       class_dir: "../unitree_g1"
-      network_interface: "enp3s0"     # Network interface to use ('ip a' to check)
-      domain_id: 0               # DDS domain ID
-      frequency: 250  # default is 240Hz
+      network_interface: "lo"     # (Optional) Network interface to use
+      domain_id: 1              # DDS domain ID
+      frequency: 240  # default is 240Hz
       control: "joint_space"
-      simulation: False
+      simulation: True
       joint_space_control:
         Kp: 60.0               # Joint stiffness coefficient
         Kd: 5.0                # Joint damping coefficient
