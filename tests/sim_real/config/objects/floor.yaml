@@ -1,0 +1,21 @@
+name: "floor"
+config:
+  source: "primitive"
+  publish_ground_truth: False
+
+  visual:
+    shape_type: "GEOM_BOX"
+    visual_shape:
+      halfExtents: [20, 20, 0.01]
+      rgbaColor: [1.0, 0.0, 0.5, 1.0]  # Pink
+
+  collision:
+    shape_type: "GEOM_BOX"
+    collision_shape:
+      halfExtents: [20, 20, 0.01]
+
+  multi_body:
+    baseMass: 0  # Static object
+
+  base_position: [0.0, 0.0, -0.0]
+  base_orientation: [0.0, 0.0, 0.0, 1.0]

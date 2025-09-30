@@ -1,0 +1,6 @@
+name: "teleop"
+config:
+  frequency: 30  # default is 120Hz
+  x_velocity: 0.5 # m/s
+  y_velocity: 0.5 # m/s
+  angular_velocity: 1.0 # rad/s

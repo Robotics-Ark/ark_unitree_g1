@@ -1,0 +1,51 @@
+robots:
+  - name: "unitree_g1"
+    config:
+      urdf_path: "urdf/urdf/g1_description.urdf"
+      class_dir: "../unitree_g1"
+      network_interface: "lo"     # (Optional) Network interface to use
+      domain_id: 1              # DDS domain ID
+      frequency: 240  # default is 240Hz
+      control: "joint_space"
+      simulation: True
+      joint_space_control:
+        Kp: 60.0               # Joint stiffness coefficient
+        Kd: 5.0                # Joint damping coefficient
+        joint_min: [
+          # Left leg (6 DOF)
+          -2.5307, -0.5236, -2.7576, -0.087267, -0.87267, -0.2618,
+          # Right leg (6 DOF)  
+          -2.5307, -2.9671, -2.7576, -0.087267, -0.87267, -0.2618,
+          # Waist (3 DOF)
+          -2.618, -0.52, -0.52,
+          # Left arm (7 DOF)
+          -3.0892, -1.5882, -2.618, -1.0472, -1.972222054, -1.614429558, -1.614429558,
+          # Right arm (7 DOF)
+          -3.0892, -2.2515, -2.618, -1.0472, -1.972222054, -1.614429558, -1.614429558
+        ]
+        joint_max: [
+          # Left leg (6 DOF)
+          2.8798, 2.9671, 2.7576, 2.8798, 0.5236, 0.2618,
+          # Right leg (6 DOF)
+          2.8798, 0.5236, 2.7576, 2.8798, 0.5236, 0.2618,
+          # Waist (3 DOF)
+          2.618, 0.52, 0.52,
+          # Left arm (7 DOF)
+          2.6704, 2.2515, 2.618, 2.0944, 1.972222054, 1.614429558, 1.614429558,
+          # Right arm (7 DOF)
+          2.6704, 1.5882, 2.618, 2.0944, 1.972222054, 1.614429558, 1.614429558
+        ]
+      lidar: False
+      camera: False
+      
+      base_position:
+        - 0
+        - 0
+        - 0
+      base_orientation: # x, y, z, w
+        - 0
+        - 0
+        - 0
+        - 1
+      use_fixed_base: false
+      merge_fixed_links: True
