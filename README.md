@@ -7,9 +7,9 @@ This repository provides drivers, simulation bridges, and demos to control the U
 pip install -r requirements.txt
 ```
 
-## Prerequirements (external)
+## Other requirements (external)
 - https://github.com/unitreerobotics/unitree_sdk2_python.git
-- conda install conda-forge::pinocchio
+- conda install conda-forge::pinocchio 
 
 
 ## Repository Structure (high-level)
@@ -38,10 +38,14 @@ pip install -r requirements.txt
 
 ## Running Modalities
 
-### 1) Real Robot (arms, hands, legs/waist)
-- Ensure Unitree SDK2 Python is installed and reachable (topics, DDS domains, NIC).
-- Configure `unitree_g1/unitree_g1.yaml` as needed (network interface, domain id, enabled sensors).
+### 1) Control the Real Robot (arms, hands, legs/waist)
+- Ensure Unitree SDK2 Python is installed and reachable (topics, DDS domains, etc).
+- Configure `unitree_g1/unitree_g1.yaml` as needed (network interface, domain id).
 - In `unitree_g1/unitree_g1.py`, SIM determines topic names; for real robot set `SIM = False`.
+
+> [!CAUTION] 
+> BEFORE RUNNING PLEASE PUT THE G1 ROBOT IN DEBUG MODE!
+> Also make sure you test the code in a free space to avoid damaging the hardware.
 
 Run:
 ```
@@ -51,48 +55,57 @@ python unitree_g1.py
 
 This launches the Ark node, creates publishers/subscribers, and manages joint groups. The driver (`unitree_g1_driver.py`) internally spins threads to track state and send commands to arms and hands.
 
+To test the working of the robot you can run the pick and place demo (in another terminal):
+
+Run:
+```
+cd tests/test_demo
+python demo_pick_place.py
+# or a simple hand test sequence (open/close):
+cd tests/test_demo
+python simple_hand_test.py
+```
+
 
 ### 2) PyBullet Simulation
+Simulation configuration is under `tests/g1_pybullet_sim/config/`.
+
 Example minimal controller that drives all joints with tiny position targets (useful for plumbing checks):
+
+Run the simulation node:
+```
+python tests/g1_pybullet_sim/sim_node.py
+```
+then you can run:
 ```
 python tests/g1_pybullet_sim/g1_controller_interface.py
 ```
 
-Simple hand test sequence (open/close):
-```
-python tests/g1_pybullet_sim/simple_hand_test.py
-```
-
-Simulation configuration is under `tests/g1_pybullet_sim/config/`.
-
 
 ### 3) MuJoCo Simulation
+If you don't have a G1 you can still try the Ark integration using the official Mujoco simulation tool provided by Unitree.
 The MuJoCo bridge emulates Unitree SDK topics for body and hands and consumes low-level commands.
 
 Key entry points in `tests/g1_mujoco_sim/`:
 - `unitree_mujoco.py`: Loads the scene and model.
 - `unitree_sdk2py_bridge.py`: Publishes simulated `LowState`, `HandState` and consumes `LowCmd`, `HandCmd`.
 
-Typical flow is to start the MuJoCo scene, then the bridge, then send commands from client scripts.
+```
+python tests/g1_mujoco_sim/unitree.mujoco.py
+```
+
+Then it will work as you were connected to a real G1. You can find more informations in: `tests/g1_mujoco_sim/README.md`
+
 
 
 ### 4) Real-to-Sim Topic Bridge
+
 Bridge the real robot state into a simulation instance:
 ```
 python tests/sim_real/real_to_sim.py
 ```
+You should run this after starting the Mujoco simulation or having the real robot connected.
 This subscribes to `unitree_g1/joint_states` and republishes the values to `unitree_g1_sim/joint_group_command` with group `all`.
-
-
-### 5) Demos (IK-driven)
-Pick-and-Place using IK for the right arm:
-```
-python tests/test_demo/demo_pick_place.py
-```
-
-Pinocchio-based IK utilities and manual demos are in `tests/test_demo/robot_arm_ik.py`.
-
-Can be used both for controlling the robot in Mujoco or the real one.
 
 
 ## Joint Groups and Control
@@ -114,5 +127,5 @@ Publish commands via Ark `joint_group_command_t` with the appropriate `name` and
 ## Acknowledgments
 Large parts of this repository are adapted from `unitreerobotics/xr_teleoperate`:
 - https://github.com/unitreerobotics/xr_teleoperate
-
+- https://github.com/unitreerobotics/unitree_mujoco
 
